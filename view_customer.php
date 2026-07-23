@@ -76,5 +76,6 @@ $leads = mysqli_query($conn, "SELECT * FROM leads WHERE customer_id=$id ORDER BY
         </table>
     </div>
 
+<?php include 'footer.php'; ?>
 </body>
 </html>

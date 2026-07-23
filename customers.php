@@ -56,5 +56,6 @@ $result = mysqli_query($conn , "SELECT * FROM customers ORDER BY created_at DESC
         </table>
     </div>
 
+<?php include 'footer.php'; ?>
 </body>
 </html>

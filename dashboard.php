@@ -42,5 +42,6 @@ $wonCount = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS total FRO
         <p>Use the navigation bar above to manage <strong>Customers</strong> and <strong>Leads</strong>.</p>
     </div>
 
+<?php include 'footer.php'; ?>
 </body>
 </html>

@@ -80,5 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
     </div>
 
+<?php include 'footer.php'; ?>
 </body>
 </html>

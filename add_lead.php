@@ -92,5 +92,6 @@ $customers = mysqli_query($conn, "SELECT id, name FROM customers ORDER BY name")
         </form>
     </div>
 
+<?php include 'footer.php'; ?>
 </body>
 </html>

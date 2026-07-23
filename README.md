@@ -211,6 +211,30 @@ Displays:
 
 ---
 
+## 📸 Screenshots
+
+### Login Page
+
+![Login Page](screenshots/login.png)
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Customers
+
+![Customers](screenshots/customers.png)
+
+### Leads
+
+![Leads](screenshots/leads.png)
+
+
+### Sales Tracking
+
+![Leads](screenshots/sales_tracking.png)
+
+---
 # FUTURE ENHANCEMENTS
 
 - Add Support Ticket CRUD

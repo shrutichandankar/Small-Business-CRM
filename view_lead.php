@@ -98,5 +98,6 @@ $status_class = strtolower(str_replace(' ', '-', $lead['status']));
 
 </div>
 
+<?php include 'footer.php'; ?>
 </body>
 </html>
