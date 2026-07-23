@@ -1,43 +1,62 @@
 # SIMPLE CRM - ACADEMIC PROJECT
 
-A simple **Customer Relationship Management (CRM)** web application developed as an academic project using **Core PHP**, **MySQL**, **HTML**, and **CSS**. The system helps small businesses manage customers, leads, sales records, customer support, and communication history through a clean and user-friendly interface.
+A simple **Customer Relationship Management (CRM)** web application developed as an academic project using **Core PHP**, **MySQL**, **HTML**, and **CSS**. The system helps small businesses manage customers, leads, sales records, customer support tickets, and communication history through a clean and user-friendly interface.
 
-**Tech Stack:** HTML, CSS, PHP (mysqli - Procedural), MySQL 
+**Tech Stack:** HTML, CSS, PHP (mysqli - Procedural), MySQL
+
 ---
 
-## FOLDER CONTENTS
+# FEATURES
 
-### Main Pages
+- Secure User Registration & Login
+- Session-Based Authentication
+- Customer Management (Add, View, Edit, Delete)
+- Lead Management (Add, View, Edit, Delete)
+- Sales Tracking Module
+- Customer Support Ticket Module
+- Communication History Module
+- Dashboard with Business Statistics
+- Password Hashing & Secure Authentication
+- Responsive and Clean User Interface
+
+---
+
+# FOLDER CONTENTS
+
+## Main Pages
 
 1. `index.php` - User Login
 2. `register.php` - Create New Account
 3. `logout.php` - Logout User
-4. `dashboard.php` - Dashboard with CRM Statistics
-5. `customers.php` - View All Customers
-6. `add_customer.php` - Add New Customer
-7. `edit_customer.php` - Update Customer Details
+4. `dashboard.php` - Dashboard Overview
+5. `customers.php` - View Customers
+6. `add_customer.php` - Add Customer
+7. `edit_customer.php` - Edit Customer
 8. `delete_customer.php` - Delete Customer
-9. `view_customer.php` - View Customer Information
-10. `leads.php` - Manage Leads
-11. `add_lead.php` - Add New Lead
-12. `sales.php` - Sales Management
-13. `support.php` - Customer Support Records
-14. `history.php` - Communication History
+9. `view_customer.php` - View Customer Details
+10. `leads.php` - View All Leads
+11. `add_lead.php` - Add Lead
+12. `view_lead.php` - View Lead Details
+13. `edit_lead.php` - Edit Lead
+14. `delete_lead.php` - Delete Lead
+15. `sales.php` - Sales Tracking
+16. `support.php` - Customer Support Tickets
+17. `history.php` - Communication History
 
-### Support Files
+## Support Files
 
 - `config.php` - Database Connection
-- `auth_check.php` - Authentication & Session Protection
-- `navbar.php` - Navigation Bar
-- `style.css` - Project Styling
+- `auth_check.php` - Authentication & Session Management
+- `navbar.php` - Shared Navigation Bar
+- `style.css` - Application Styling
 - `database.sql` - Database Schema & Sample Data
 - `README.md` - Project Documentation
 
 ---
 
-## HOW TO RUN (XAMPP / WAMP)
+# HOW TO RUN
 
-### 1. Install XAMPP/WAMP
+## 1. Install XAMPP / WAMP
 
 Start:
 
@@ -46,9 +65,9 @@ Start:
 
 ---
 
-### 2. Copy Project Folder
+## 2. Copy Project Folder
 
-Copy the project folder into your web server directory.
+Place the project inside:
 
 **XAMPP**
 
@@ -64,9 +83,9 @@ C:\wamp64\www\crm-project
 
 ---
 
-### 3. Import Database
+## 3. Import Database
 
-Open
+Open:
 
 ```
 http://localhost/phpmyadmin
@@ -75,10 +94,10 @@ http://localhost/phpmyadmin
 Create a database named:
 
 ```
-crm_project
+crm_db
 ```
 
-Import
+Import:
 
 ```
 database.sql
@@ -86,22 +105,22 @@ database.sql
 
 ---
 
-### 4. Configure Database
+## 4. Configure Database
 
-Open `config.php` and update the database credentials if required.
+Open `config.php` and update the credentials if needed.
 
 ```php
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "crm_project";
+$database = "crm_db";
 ```
 
 ---
 
-### 5. Run the Project
+## 5. Run the Project
 
-Open your browser and visit
+Open:
 
 ```
 http://localhost/crm-project/
@@ -109,97 +128,103 @@ http://localhost/crm-project/
 
 ---
 
-### 6. Register & Login
+## 6. Register & Login
 
-- Create a new account using the **Register** page.
-- Login using your credentials.
-- Start managing customers, leads, sales, and support information.
+- Create a new account.
+- Login with your credentials.
+- Access the CRM dashboard.
 
 ---
 
-## PROJECT MODULES
+# PROJECT MODULES
 
-### Authentication
+## Authentication
 
 - User Registration
 - User Login
 - Logout
 - Session Management
 
-### Dashboard
+## Dashboard
 
-Displays important CRM statistics including:
+Displays:
 
 - Total Customers
 - Total Leads
 - Total Sales
+- Total Support Tickets
 
-### Customer Management
+## Customer Management
 
 - Add Customer
-- View Customer Details
+- View Customer
 - Edit Customer
 - Delete Customer
 
-### Lead Management
+## Lead Management
 
 - Add Lead
-- View Leads
+- View Lead
+- Edit Lead
+- Delete Lead
 
-### Sales Management
+## Sales Tracking
 
-- Record and View Sales Information
+- View Sales Records
+- Track Sales Stage
+- View Deal Amount
 
-### Customer Support
+## Support Ticket Management
 
-- Manage Customer Support Requests
+- View Customer Support Tickets
+- Track Ticket Status & Priority
 
-### Communication History
+## Communication History
 
-- Store customer interaction history
+- Store Customer Calls
+- Store Emails
+- Store Meeting Records
 
 ---
 
-## HOW THE PROJECT WORKS
+# HOW THE PROJECT WORKS
 
-- User authentication is handled using PHP Sessions.
-- `auth_check.php` protects all secured pages from unauthorized access.
-- Database connectivity is managed through `config.php`.
-- Customer and lead information is stored in a MySQL database.
-- CRUD (Create, Read, Update, Delete) operations are implemented using PHP and MySQL.
+- User authentication is implemented using PHP Sessions.
+- `auth_check.php` prevents unauthorized access to protected pages.
+- Database connectivity is handled using `config.php`.
+- Customer, Lead, Sales, Support, and Communication modules use MySQL for data storage.
+- CRUD operations are implemented for Customers and Leads.
 - Passwords are securely stored using `password_hash()` and verified using `password_verify()`.
-- User inputs are sanitized using `mysqli_real_escape_string()` and displayed safely using `htmlspecialchars()`.
-- Customers and leads are connected through a foreign key relationship.
+- User input is sanitized using `mysqli_real_escape_string()` and displayed safely using `htmlspecialchars()` to reduce security risks.
+- Customers and Leads are connected through a foreign key (`customer_id`) with `ON DELETE CASCADE`.
 
 ---
 
-## FEATURES
+# DATABASE TABLES
 
-- Secure Login System
-- Customer Management
-- Lead Management
-- Sales Tracking
-- Customer Support
-- Communication History
-- Dashboard Statistics
-- Responsive Layout
-- Session-Based Authentication
+- users
+- customers
+- leads
+- sales_tracking
+- support_tickets
+- communication_history
 
 ---
 
-## FUTURE ENHANCEMENTS
+# FUTURE ENHANCEMENTS
 
-- Customer Search & Filters
-- Export Reports (PDF/Excel)
+- Add Support Ticket CRUD
+- Customer Search & Filtering
+- Export Reports to PDF/Excel
 - Email Notifications
-- Role-Based Authentication (Admin/Employee)
-- Charts & Analytics Dashboard
+- Role-Based Access Control (Admin/User)
+- Dashboard Charts & Analytics
 - Task & Follow-up Management
-- Pagination for Large Data
+- Pagination
 
 ---
 
-## AUTHOR
+# AUTHOR
 
 **Shruti Chandankar**
 
@@ -207,6 +232,6 @@ Final Year BCA Student
 
 ---
 
-## LICENSE
+# LICENSE
 
 This project is developed for educational and academic purposes only.
